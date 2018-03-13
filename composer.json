@@ -1,0 +1,25 @@
+{
+    "name": "exeguibiledotit/kontrast",
+    "description": "Php Project ", 
+    "keywords": ["php","development"],
+    "license": "BSD",
+    "authors": [
+        {
+            "name": "Stefano Bonvicini",
+            "email": "stefano.bonvicini@gmail.com",
+            "homepage": "http://stefanobonvicini.altervista.org",
+            "role": "Creator/Developer"
+        }
+    ],
+    "require": {
+        "php": "7.*",
+    },
+    "autoload": {
+        "psr-4": {
+            "ExeguibileDotIt\\": "src/ExeguibileDotIt/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
