@@ -44,18 +44,33 @@ class HtmlColorTest extends TestCase
      */
     public function testHexadecimal()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        
+        $this->assertEquals('44feb4', $this->object->hexadecimal('#44feb4')->hexadecimal());
 
     }
 
 
-    public function testIsvalidhexadecimalcolor()
+    public function testHexadecimalDoesNotDependOnHashTag()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $v = $this->object->hexadecimal('#44feb4')->hexadecimal();
+        
+        $w = $this->object->hexadecimal('44feb4')->hexadecimal();
+
+        $this->assertEquals($v, $w);
+
+    }
+
+
+    public function testIsValidHexadecimalColor()
+    {
+
+        $this->assertTrue(HtmlColor::isValidHexadecimalColor('aa3a5b'), "aa3a5b is not recognized as a valid hexadecimal");
+        
+        $this->assertTrue(HtmlColor::isValidHexadecimalColor('#aa3a5b'), "#aa3a5b is not recognized as a valid hexadecimal");
+        
+        $this->assertFalse(HtmlColor::isValidHexadecimalColor('#xa3a5b'), "#xa3a5b is recognized as a valid hexadecimal");
+        
+        $this->assertFalse(HtmlColor::isValidHexadecimalColor('#xa3a5bx'), "#xa3a5bx is recognized as a valid hexadecimal");
 
     }
 
@@ -64,42 +79,55 @@ class HtmlColorTest extends TestCase
      * 
      * @return 
      */
-    public function test__clone()
+    public function testObjectClone()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->object->hexadecimal('ffaa33');
 
+        $cloned = clone $this->object;
+
+        $this->assertInstanceOf(HtmlColor::class, $cloned);
+
+        $this->assertNull($cloned->hexadecimal());
+        
     }
 
     /**
      * Method setUndefined
      *
+     * @depends testIsUndefined
+     *
      * @return self
      */
-    public function testSetundefined()
+    public function testSetUndefined()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->object->hexadecimal("ffaabb");
 
+        $this->assertFalse($this->object->isUndefined());
+
+        $this->assertTrue($this->object->setUndefined()->isUndefined());
     }
 
 
-    public function testIsundefined()
+    public function testIsUndefined()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertTrue($this->object->isUndefined());
 
+        $this->object->hexadecimal('111111');
+
+        $this->assertFalse($this->object->isUndefined());
     }
 
 
-    public function test__tostring()
+    public function testToString()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+
+        $string = "#ffaa33";
+
+        $this->object->hexadecimal($string);
+
+        $this->expectOutputString($string);
+
+        echo $this->object;
 
     }
 

@@ -88,11 +88,13 @@ class RGBColor implements ColorObjectBehaviour
 
             $this->b = $b;
 
-        }
+        } else {
 
-        if ($n > 0) {
+            if ($n > 0) {
 
-            throw \InvalidArgumentException(__CLASS__ . ": Can't create object all three bands have to be defined.");
+                throw new \InvalidArgumentException(__CLASS__ . ": Can't create object all three bands have to be defined.");
+
+            }
 
         }
     

@@ -80,5 +80,3 @@ class HtmlColorSystem  extends HtmlColor implements ColorSystemBehaviour
     }
 
 }
-
-

@@ -93,7 +93,7 @@ class HtmlColor implements ColorObjectBehaviour
     {
         if (is_string($color)) {
 
-            return preg_match(self::HTML_HEX_COLOR_REGEX, $color);
+            return (bool) preg_match(self::HTML_HEX_COLOR_REGEX, $color);
 
         }
 

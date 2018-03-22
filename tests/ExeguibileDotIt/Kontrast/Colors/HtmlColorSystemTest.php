@@ -37,11 +37,20 @@ class HtmlColorSystemTest extends TestCase
      *
      * @return RGBColor object
      */
-    public function testTorgb()
+    public function testToRGB()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+
+        $this->object->hexadecimal('aab1c3');
+
+        $rgb = $this->object->toRGB();
+
+        $this->assertEquals($rgb->r(), 170);
+
+        $this->assertEquals($rgb->g(), 177);
+
+        $this->assertEquals($rgb->b(), 195);
+
+        return $rgb;
 
     }
 
@@ -53,117 +62,16 @@ class HtmlColorSystemTest extends TestCase
      * @param RGBColor $color
      *
      * @return self
+     *
+     * @depends testToRGB
      */
-    public function testFromrgb()
+    public function testFromRGB($rgb)
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->object->fromRGB($rgb);
+
+        $this->assertEquals('aab1c3', $this->object->hexadecimal());
 
     }
-
-    /**
-     * Method hexadecimal.
-     *
-     * @param string $v
-     * 
-     * @throws \InvalidArgumentException
-     *
-     * @return mixed self in setter mode hexadecimal string in getter mode
-     * without #
-     */
-    public function testHexadecimal()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-
-    public function testIsvalidhexadecimalcolor()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /**
-     * Method __clone.
-     * 
-     * @return 
-     */
-    public function test__clone()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /**
-     * Method setUndefined
-     *
-     * @return self
-     */
-    public function testSetundefined()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-
-    public function testIsundefined()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-
-    public function test__tostring()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /**
-     * Method getSystemID.
-     * Returns the ID of the ColorSystem
-     *
-     * @return mixed ID of the color system
-     */
-    public function testGetsystemid()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /**
-     * Method setSystemID.
-     *
-     * @param mixed $id
-     *
-     * @throws \InvalidArgumentException
-     *
-     * @return void
-     */
-    public function testSetsystemid()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
 
 }
 

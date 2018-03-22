@@ -45,10 +45,9 @@ class RGBColorTest extends TestCase
      */
     public function testR()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->object->r(33);
 
+        $this->assertEquals(33, $this->object->r(), "Assigned R value does not correspond to returned one.");
     }
 
     /**
@@ -64,9 +63,9 @@ class RGBColorTest extends TestCase
      */
     public function testG()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->object->g(33);
+
+        $this->assertEquals(33, $this->object->g(), "Assigned G value does not correspond to returned one.");
 
     }
 
@@ -83,10 +82,9 @@ class RGBColorTest extends TestCase
      */
     public function testB()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->object->g(33);
 
+        $this->assertEquals(33, $this->object->g(), "Assigned B value does not correspond to returned one.");
     }
 
     /**
@@ -96,11 +94,17 @@ class RGBColorTest extends TestCase
      * 
      * @return bool
      */
-    public function testIsvalidrgbint()
+    public function testIsValidRGBInt()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertTrue(RGBColor::isValidRGBInt(0), "Zero is not recognized as a valid RGB Int");
+
+        $this->assertTrue(RGBColor::isValidRGBInt(255), "255 is not recognized as a valid RGB Int");
+
+        $this->assertFalse(RGBColor::isValidRGBInt(5.3), "5.3 is not recognized as a valid RGB Int");
+        
+        $this->assertFalse(RGBColor::isValidRGBInt(-5), "-5 is recognized as a valid RGB Int");
+        
+        $this->assertFalse(RGBColor::isValidRGBInt(500), "500 is recognized as a valid RGB Int");
 
     }
 
@@ -109,11 +113,20 @@ class RGBColorTest extends TestCase
      * 
      * @return 
      */
-    public function test__clone()
+    public function testObjectClone()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+    
+        $this->object->r(33)->g(255)->b(3);
+
+        $cloned = clone $this->object;
+
+        $this->assertInstanceOf(RGBColor::class, $cloned);
+
+        $this->assertNull($cloned->r());
+        
+        $this->assertNull($cloned->g());
+        
+        $this->assertNull($cloned->b());
 
     }
 
@@ -122,20 +135,36 @@ class RGBColorTest extends TestCase
      *
      * @return self
      */
-    public function testSetundefined()
+    public function testSetUndefined()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+
+        $this->object->r(33)->g(255)->b(3);
+
+        $this->assertFalse($this->object->isUndefined());
+
+        $this->assertTrue($this->object->setUndefined()->isUndefined());
 
     }
 
 
-    public function testIsundefined()
+    /**
+     * @depends testSetUndefined
+     */
+    public function testIsUndefined()
     {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
+        $this->assertTrue($this->object->isUndefined());
+
+        $this->object->r(55);
+
+        $this->assertTrue($this->object->isUndefined());
+
+        $this->object->g(55);
+
+        $this->assertTrue($this->object->isUndefined());
+
+        $this->object->b(55);
+
+        $this->assertFalse($this->object->isUndefined());
 
     }
 

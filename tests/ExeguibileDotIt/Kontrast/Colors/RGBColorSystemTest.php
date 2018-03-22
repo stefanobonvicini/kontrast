@@ -19,187 +19,64 @@ class RGBColorSystemTest extends TestCase
 {
 
     /**
- * @var RGBColorSystem instance of the class object
- */
-protected $object;
+     * @var RGBColorSystem instance of the class object
+     */
+    protected $object;
 
-/**
- * Sets up the fixture
- * This method is called before a test is executed.
- */
-protected function setUp()
-{
-    $this->object = new RGBColorSystem;
-}
+    /**
+     * Sets up the fixture
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        $this->object = new RGBColorSystem;
+    }
 
-        /**
+    /**
      * Method toRGB.
      *
      * @return RGBColor object
      */
-public function testTorgb()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function testToRGB()
+    {
+        $this->object->r(33)->g(255)->b(3);
 
-}
+        $copy =$this->object->toRGB();
 
-        /**
+        $this->assertEquals($copy->r(), $this->object->r());
+
+        $this->assertEquals($copy->g(), $this->object->g());
+
+        $this->assertEquals($copy->b(), $this->object->b());
+
+        return $copy;
+
+    }
+
+    /**
      * Method fromRGB. Sets up object
-     * params by RGBColor object in this case is like cloning an object
+     * params by RGBColor object in this case 
+     * is like cloning an object
      *
      * @param RGBColor $color
      *
      * @return self
+     *
+     * @depends testToRGB
      */
-public function testFromrgb()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function testFromRGB(RGBColor $color)
+    {
 
-}
+        $this->object->fromRGB($color);
 
-        /**
-     * Method r 
-     * Gets or sets color R value
-     *
-     * @param int $v
-     * 
-     * @throws \InvalidArgumentException
-     *
-     * @return mixed self if used as a setter the value 
-     * if used as getter
-     */
-public function testR()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+        $this->assertEquals($color->r(), $this->object->r());
 
-}
+        $this->assertEquals($color->g(), $this->object->g());
 
-        /**
-     * Method g 
-     * Gets or sets color G value
-     *
-     * @param int $v
-     * 
-     * @throws \InvalidArgumentException
-     *
-     * @return mixed self if used as a setter the value 
-     * if used as getter
-     */
-public function testG()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+        $this->assertEquals($color->b(), $this->object->b());
 
-}
+    }
 
-        /**
-     * Method b 
-     * Gets or sets color B value
-     *
-     * @param int $v
-     * 
-     * @throws \InvalidArgumentException
-     *
-     * @return mixed self if used as a setter the value 
-     * if used as getter
-     */
-public function testB()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-        /**
-     * Method isValidRGBInt.
-     *
-     * @param int $n
-     * 
-     * @return bool
-     */
-public function testIsvalidrgbint()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-        /**
-     * Method __clone.
-     * 
-     * @return 
-     */
-public function test__clone()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-        /**
-     * Method setUndefined.
-     *
-     * @return self
-     */
-public function testSetundefined()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-        
-public function testIsundefined()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-        /**
-     * Method getSystemID.
-     * Returns the ID of the ColorSystem
-     *
-     * @return mixed ID of the color system
-     */
-public function testGetsystemid()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-        /**
-     * Method setSystemID.
-     *
-     * @param mixed $id
-     *
-     * @throws \InvalidArgumentException
-     *
-     * @return void
-     */
-public function testSetsystemid()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
-
-}
-
-    
 }
 
 

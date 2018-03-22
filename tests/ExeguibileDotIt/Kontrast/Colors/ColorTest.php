@@ -19,35 +19,35 @@ class ColorTest extends TestCase
 {
 
     /**
- * @var Color instance of the class object
- */
-protected $object;
+     * @var Color instance of the class object
+     */
+    protected $object;
 
-/**
- * Sets up the fixture
- * This method is called before a test is executed.
- */
-protected function setUp()
-{
-    $this->object = new Color;
-}
+    /**
+     * Sets up the fixture
+     * This method is called before a test is executed.
+     */
+    protected function setUp()
+    {
+        $this->object = new Color;
+    }
 
-        /**
+    /**
      * Method addColorSpaceSupport.
      *
      * @param ColorSpace $cs
      * 
      * @return void
      */
-public function testAddcolorspaceisupport()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function testAddcolorspaceisupport()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
 
-}
+    }
 
-        /**
+    /**
      * Method _call.
      *
      * 
@@ -55,30 +55,30 @@ public function testAddcolorspaceisupport()
      *
      * @return mixed
      */
-public function test_call()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function test_call()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
 
-}
+    }
 
-        /**
+    /**
      * Method __get.
      *
      * @param string $prop
      * 
      * @return mixed
      */
-public function test__get()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function test__get()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
 
-}
+    }
 
-        /**
+    /**
      * Method __set.
      *
      * @param string $prop
@@ -87,15 +87,15 @@ public function test__get()
      * 
      * @return self
      */
-public function test__set()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function test__set()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
 
-}
+    }
 
-        /**
+    /**
      * Method convertTo.
      *
      * @param int $sysID
@@ -106,15 +106,15 @@ public function test__set()
      *
      * @return self
      */
-public function testConvertto()
-{
-    $this->markTestIncomplete(
-        'This test has not been implemented yet.'
-    );
+    public function testConvertto()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
 
-}
+    }
 
-    
+
 }
 
 
