@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpdoc>
+	<title><![CDATA[ExeguibileDotIt Package]]></title>
+	<files>
+		<directory>src</directory>
+		<ignore>**__**</ignore>
+	</files>
+	<parser>
+		<target>docs</target>
+		<encoding>utf8</encoding>
+	</parser>
+	<transformer>
+		<target>docs</target>
+	</transformer>
+	<transformations>
+		<template name="clean" />
+	</transformations>
+</phpdoc>

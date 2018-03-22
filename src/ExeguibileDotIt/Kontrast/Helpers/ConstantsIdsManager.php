@@ -54,7 +54,7 @@ abstract class ConstantsIdsManager
     public function __construct($maxId, $namespace = null)
     {
 
-        if(is_int($maxid) ? $maxid < 1 : true){
+        if(is_int($maxId) ? $maxId < 1 : true){
 
             throw new \InvalidArgumentException(__CLASS__ . ": maxid param is out of a valid range");
 

@@ -14,7 +14,7 @@ namespace ExeguibileDotIt\Kontrast\Colors;
 
 
 /** 
- * Interface ColorSystemObjectBehaviour.
+ * Interface ColorSystemBehaviour.
  *
  * This interface defines a ColorSystem as an abstraction:
  *
@@ -39,7 +39,7 @@ namespace ExeguibileDotIt\Kontrast\Colors;
  *
  */
 
-interface ColorSystemObjectBehaviour
+interface ColorSystemBehaviour
 {
 
     /**
@@ -79,7 +79,7 @@ interface ColorSystemObjectBehaviour
      *
      * @return void
      */
-    public static function setSystemID();
+    public static function setSystemID($id);
 
 }
 
