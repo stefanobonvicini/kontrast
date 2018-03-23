@@ -83,65 +83,14 @@ class ColorSpaceTest extends TestCase
 
     }
 
-    /**
-     * Method getColorSystemsAmount.
-     *
-     * @return int
-     */
-    public function testGetColorSystemsAmount()
+
+    public function testCount()
     {
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
         );
 
     }
-
-    /** 
-     * Method defineConstant
-     *
-     * @param string $label
-     *
-     * @throws \OutOfRangeException if the max
-     * allowed number of labels is exceeded
-     *
-     * @return int the label id
-     **/
-    public function testDefineConstant()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /** 
-     * Method labelExists
-     *
-     * @param string label 
-     *
-     * @return bool true if the label exists
-     **/
-    public function testLabelExists()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /** 
-     * Method getMaxAllowedId returns the $maxId var
-     *
-     * @return int $maxId
-     **/
-    public function testGetMaxallowedId()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
 
 }
 

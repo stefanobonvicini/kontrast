@@ -19,27 +19,13 @@ class ColorTest extends TestCase
 {
 
     /**
-     * @var Color instance of the class object
-     */
-    protected $object;
-
-    /**
-     * Sets up the fixture
-     * This method is called before a test is executed.
-     */
-    protected function setUp()
-    {
-        $this->object = new Color;
-    }
-
-    /**
-     * Method addColorSpaceSupport.
+     * Method setSupportedColorSystem.
      *
      * @param ColorSpace $cs
      * 
      * @return void
      */
-    public function testAddcolorspaceisupport()
+    public function testSetSupportedColorSystem()
     {
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
@@ -47,53 +33,6 @@ class ColorTest extends TestCase
 
     }
 
-    /**
-     * Method _call.
-     *
-     * 
-     * @throws \RuntimeException
-     *
-     * @return mixed
-     */
-    public function test_call()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /**
-     * Method __get.
-     *
-     * @param string $prop
-     * 
-     * @return mixed
-     */
-    public function test__get()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
-
-    /**
-     * Method __set.
-     *
-     * @param string $prop
-     *
-     * @param mixed $val
-     * 
-     * @return self
-     */
-    public function test__set()
-    {
-        $this->markTestIncomplete(
-            'This test has not been implemented yet.'
-        );
-
-    }
 
     /**
      * Method convertTo.
@@ -106,14 +45,13 @@ class ColorTest extends TestCase
      *
      * @return self
      */
-    public function testConvertto()
+    public function testConvertTo()
     {
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
         );
 
     }
-
 
 }
 
