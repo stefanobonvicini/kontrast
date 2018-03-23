@@ -25,7 +25,7 @@ use \ExeguibileDotIt\Kontrast\Helpers\ConstantsIdsManager;
  *
  */
 
-class ColorSpace extends ConstantsIdsManager
+class ColorSpace extends ConstantsIdsManager implements ColorSystemsEnsambleBehaviour
 {
     
     const MIN_LABEL_LEN = 4;
@@ -48,7 +48,7 @@ class ColorSpace extends ConstantsIdsManager
      * @var int $sysnum
      * the number of defined ColorSystems
      */
-    protected $sysnum = 0;
+    protected $sysnum;
 
 
     /** 
@@ -63,6 +63,7 @@ class ColorSpace extends ConstantsIdsManager
 
         parent::__construct(self::MAX_ALLOWED_COLOR_SYSTEMS, $namespace);
 
+        $this->sysnum = 0;
     }
 
 
@@ -127,7 +128,7 @@ class ColorSpace extends ConstantsIdsManager
 
             if (is_int($sysID) ? ($sysID < 0 || $sysID >= $this->sysnum) : true) {
 
-                throw new \InvalidArgumentException(__CLASS__ . ": given id is not a valid int.");
+                throw new \InvalidArgumentException(__CLASS__ . ": given id is not a of defined ColorSystem.");
 
             }
 
@@ -141,18 +142,16 @@ class ColorSpace extends ConstantsIdsManager
 
 
     /**
-     * Method getColorSystemsAmount.
+     * Method count
      *
      * @return int
      */
-    public function getColorSystemsAmount()
+    public function count()
     {
 
        return $this->sysnum; 
     
     }
-    
-          
 
 }
 

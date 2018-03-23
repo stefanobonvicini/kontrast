@@ -23,7 +23,7 @@ namespace ExeguibileDotIt\Kontrast\Colors;
  *
  */
 
-class Color
+class Color implements AbstractColorBehaviour
 {
 
     /** 
@@ -40,13 +40,13 @@ class Color
 
 
     /**
-     * Method addColorSpaceSupport.
+     * Method setSupportedColorSystems
      *
-     * @param ColorSpace $cs
+     * @param ColorSystemsEnsambleBehaviour $cs
      * 
      * @return void
      */
-    public static function addColorSpaceiSupport(ColorSpace $cs)
+    public static function setSupportedColorSystems(ColorSystemsEnsambleBehaviour $cs)
     {
         self::$cspace = $cs;
     }
@@ -65,7 +65,7 @@ class Color
     {
         if (! isset(self::$cspace)) {
 
-            throw new \RuntimeException(__CLASS__ . ": Can't instantiate Color ColorSpace is undefined.");
+            throw new \RuntimeException(__CLASS__ . ": Can't instantiate Color becouse no ColorSystem is defined.");
 
         }
 
@@ -170,5 +170,4 @@ class Color
     }
 
 }
-
 
