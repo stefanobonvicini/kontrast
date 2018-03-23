@@ -67,15 +67,30 @@ class HtmlColorSystem  extends HtmlColor implements ColorSystemBehaviour
 
         if (!$color->isUndefined()) {
 
-            $this->hex = dechex($color->r());
+            $this->hex = $this->decToHex($color->r());
 
-            $this->hex .= dechex($color->g());
+            $this->hex .= $this->decToHex($color->g());
             
-            $this->hex .= dechex($color->b());
+            $this->hex .= $this->decToHex($color->b());
 
         }
         
         return $this;
+
+    }
+
+
+    protected function decToHex($v)
+    {
+        $v = dechex($v);
+
+        if (strlen($v) < 2) {
+
+            $v = "0{$v}";
+
+        }
+
+        return $v;
 
     }
 

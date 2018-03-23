@@ -83,7 +83,7 @@ class Color implements AbstractColorBehaviour
      *
      * @return mixed
      */
-    public function _call($method, $args)
+    public function __call($method, $args)
     {
         if (method_exists($this->color, $method)) {
 
@@ -95,51 +95,6 @@ class Color implements AbstractColorBehaviour
     
     }
 
-
-    /**
-     * Method __get.
-     *
-     * @param string $prop
-     * 
-     * @return mixed
-     */
-    public function __get($prop)
-    {
-    
-        if (method_exists($this->color, $prop)) {
-
-            return $this->color->{$prop}();
-
-        }
-
-        throw new \RuntimeException(__CLASS__ . ": required attribute $prop is not defined"); 
-    
-    }
-
-          
-    /**
-     * Method __set.
-     *
-     * @param string $prop
-     *
-     * @param mixed $val
-     * 
-     * @return self
-     */
-    public function __set($prop, $val)
-    {
-    
-        if (method_exists($this->color, $prop)) {
-
-            call_user_func([$this->color, $prop], $val);
-
-            return $this;
-
-        }
-
-        throw new \RuntimeException(__CLASS__ . ": required attribute $prop is not defined"); 
-    
-    }
 
 
     /**
