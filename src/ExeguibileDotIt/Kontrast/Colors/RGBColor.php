@@ -66,19 +66,19 @@ class RGBColor implements ColorObjectBehaviour
             
             if (! self::isValidRGBInt($r)) {
 
-                throw \InvalidArgumentException(__CLASS__ . ": R value is not valid.");
+                throw new \InvalidArgumentException(__CLASS__ . ": R value is not valid.");
 
             }
 
             if (! self::isValidRGBInt($g)) {
 
-                throw \InvalidArgumentException(__CLASS__ . ": G value is not valid.");
+                throw new \InvalidArgumentException(__CLASS__ . ": G value is not valid.");
 
             }
     
             if (! self::isValidRGBInt($b)) {
 
-                throw \InvalidArgumentException(__CLASS__ . ": B value is not valid.");
+                throw new \InvalidArgumentException(__CLASS__ . ": B value is not valid.");
 
             }
 

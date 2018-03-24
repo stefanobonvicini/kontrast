@@ -32,6 +32,8 @@ namespace ExeguibileDotIt\Kontrast\Colors;
  * B->fromRGB(A->toRGB());
  *
  *```
+ * @todo toRGB method could recive an RGBColor as argument and return it defined
+ * to reduce coupling  
  *
  * @author Stefano Bonvicini <stefano.bonvicini@gmail.com>
  *
